@@ -1,4 +1,4 @@
-package ru.sberbank.homework.your_lastname;
+package ru.sberbank.homework.koval_nikita;
 
 /**
  * Вот такой простой интерфейс
