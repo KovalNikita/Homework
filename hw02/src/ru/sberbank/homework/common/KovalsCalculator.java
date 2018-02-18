@@ -1,8 +1,8 @@
-package ru.sberbank.homework.koval_nikita;
+package ru.sberbank.homework.common;
 
-import ru.sberbank.homework.koval_nikita.Operation;
-import ru.sberbank.homework.koval_nikita.SimpleParser;
-import ru.sberbank.homework.koval_nikita.ExpressionFormatException;
+import ru.sberbank.homework.common.Operation;
+import ru.sberbank.homework.common.SimpleParser;
+import ru.sberbank.homework.common.ExpressionFormatException;
 
 
 import java.text.DecimalFormat;

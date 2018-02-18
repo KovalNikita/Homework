@@ -1,8 +1,8 @@
-package ru.sberbank.homework.koval_nikita;
+package ru.sberbank.homework.common;
 
 import java.util.HashMap;
 
-import ru.sberbank.homework.koval_nikita.ExpressionFormatException;
+import ru.sberbank.homework.common.ExpressionFormatException;
 
 enum Operation {
     ADDITION {

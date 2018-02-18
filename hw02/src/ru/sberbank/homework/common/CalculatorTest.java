@@ -1,9 +1,9 @@
-package ru.sberbank.homework.koval_nikita;
+package ru.sberbank.homework.common;
 
 import java.util.Scanner;
 
-import ru.sberbank.homework.koval_nikita.KovalsCalculator;
-import ru.sberbank.homework.koval_nikita.Assert;
+import ru.sberbank.homework.common.KovalsCalculator;
+import ru.sberbank.homework.common.Assert;
 
 public class CalculatorTest {
     public static void main(String[] args) {

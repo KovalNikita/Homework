@@ -1,4 +1,4 @@
-package ru.sberbank.homework.koval_nikita;
+package ru.sberbank.homework.common;
 
 public class Assert {
 

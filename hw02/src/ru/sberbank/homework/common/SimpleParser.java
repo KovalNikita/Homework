@@ -1,6 +1,6 @@
-package ru.sberbank.homework.koval_nikita;
+package ru.sberbank.homework.common;
 
-import ru.sberbank.homework.koval_nikita.ExpressionFormatException;
+import ru.sberbank.homework.common.ExpressionFormatException;
 
 public class SimpleParser {
     private static String deleteUnderlining(String number) {
