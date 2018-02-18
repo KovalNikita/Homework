@@ -1,8 +1,5 @@
-package ru.sberbank.homework.common;
+package ru.sberbank.homework.koval_nikita;
 
-/**
- * Вот такой простой интерфейс
- */
 public interface Calculator {
 
     /**
