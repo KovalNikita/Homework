@@ -1,19 +1,15 @@
-package ru.sberbank.homework.common;
+package ru.sberbank.homework.koval;
 
-import ru.sberbank.homework.common.Operation;
-import ru.sberbank.homework.common.SimpleParser;
-import ru.sberbank.homework.common.ExpressionFormatException;
-
+import ru.sberbank.homework.common.Calculator;
 
 import java.text.DecimalFormat;
-import java.util.HashMap;
 
-public class KovalsCalculator {
+public class KovalsCalculator implements Calculator {
 
     private double currResult;
-    private boolean isFirstOperation;
+    private boolean isFirstOperation = true;
 
-    String calculate(String userInput) {
+    public String calculate(String userInput) {
 
         String[] tokens = userInput.split(" ");
 
@@ -32,7 +28,6 @@ public class KovalsCalculator {
                     num2 = SimpleParser.parse(tokens[1]);
                     break;
                 case 3:
-                    isFirstOperation = false;
                     num1 = SimpleParser.parse(tokens[0]);
                     op = Operation.getOperation(tokens[1]);
                     num2 = SimpleParser.parse(tokens[2]);
@@ -41,6 +36,7 @@ public class KovalsCalculator {
                     throw new ExpressionFormatException();
             }
             currResult = op.apply(num1, num2);
+            isFirstOperation = false;
             DecimalFormat df2 = new DecimalFormat("###.##");
             result = df2.format(currResult).replace(",", ".");
         } catch (NumberFormatException e) {

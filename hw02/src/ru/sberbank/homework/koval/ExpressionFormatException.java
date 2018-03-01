@@ -1,4 +1,4 @@
-package ru.sberbank.homework.common;
+package ru.sberbank.homework.koval;
 
 public class ExpressionFormatException extends IllegalArgumentException {
     public ExpressionFormatException() {

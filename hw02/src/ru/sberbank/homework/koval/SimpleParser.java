@@ -1,6 +1,4 @@
-package ru.sberbank.homework.common;
-
-import ru.sberbank.homework.common.ExpressionFormatException;
+package ru.sberbank.homework.koval;
 
 public class SimpleParser {
     private static String deleteUnderlining(String number) {
@@ -21,6 +19,19 @@ public class SimpleParser {
         if (len == 0) {
             throw new ExpressionFormatException();
         }
+        boolean isNegative = false;
+        if (number.charAt(0) == '+') {
+            number = number.substring(1);
+            len = number.length();
+        } else if (number.charAt(0) == '-') {
+            number = number.substring(1);
+            len = number.length();
+            isNegative = true;
+        }
+
+        if (len == 0) {
+            throw new ExpressionFormatException();
+        }
 
         int radix;
         if (number.charAt(0) == '0') {
@@ -31,21 +42,28 @@ public class SimpleParser {
                     case 'x':
                         radix = 16;
                         number = number.substring(2);
+                        number = deleteUnderlining(number);
                         break;
                     case 'b':
                         radix = 2;
                         number = number.substring(2);
+                        number = deleteUnderlining(number);
                         break;
                     default:
                         radix = 8;
+                        number = deleteUnderlining(number);
                         number = number.substring(1);
                 }
             }
         } else {
             radix = 10;
+            number = deleteUnderlining(number);
         }
-
-        return Integer.parseInt(deleteUnderlining(number), radix);
+        long res = Long.parseLong(number, radix);
+        if (isNegative) {
+            res = -res;
+        }
+        return res;
     }
 
     private static double parseDouble(String number) {
