@@ -16,6 +16,7 @@ public class CalculatorTest {
         doubleFormatTest();
         wrongCommandTest();
 
+
         System.out.println("All tests were passed successfully!");
 
         Scanner in = new Scanner(System.in);

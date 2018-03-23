@@ -24,22 +24,23 @@ enum Operation {
         }
     };
 
-    static HashMap<String, Operation> op = new HashMap<>();
+    static HashMap<String, Operation> operations = new HashMap<>();
 
     static {
-        op.put("+", ADDITION);
-        op.put("-", SUBTRACTION);
-        op.put("*", MULTIPLICATION);
-        op.put("/", DIVISION);
+        operations.put("+", ADDITION);
+        operations.put("-", SUBTRACTION);
+        operations.put("*", MULTIPLICATION);
+        operations.put("/", DIVISION);
     }
 
     public abstract double apply(double a, double b);
 
-    public static Operation getOperation(String operation) {
-        if (op.containsKey(operation)) {
-            return op.get(operation);
+    public static Operation getOperation(String operationName) {
+        Operation operation = operations.get(operationName);
+        if (operation == null) {
+            throw new ExpressionFormatException();
         }
-        throw new ExpressionFormatException();
+        return operation;
     }
 }
 
